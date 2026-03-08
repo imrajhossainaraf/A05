@@ -191,7 +191,7 @@ function displayDashboard(issues) {
             </div>
             
             <!-- Grid -->
-            <div id="issues-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 pb-10">
+            <div id="issues-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
             </div>
         </div>
     `;
@@ -260,12 +260,18 @@ function renderGridFilteredList() {
                         ${labelsHTML}
                     </div>
                     
-                    <div class="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t border-gray-50">
-                        <div class="flex items-center gap-1.5 font-medium">
-                            <span class="w-5 h-5 rounded-full bg-gradient-to-br from-[#4f46e5] to-purple-600 text-white flex items-center justify-center text-[10px]">${(issue.author || 'U').charAt(0).toUpperCase()}</span>
-                            ${issue.author}
+                    <div class="mt-auto pt-4 border-t border-gray-50 text-xs text-gray-400 flex flex-col gap-2">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-1.5 font-medium text-gray-500">
+                                <span class="w-5 h-5 rounded-full bg-gradient-to-br from-[#4f46e5] to-purple-600 text-white flex items-center justify-center text-[10px]">${(issue.author || 'U').charAt(0).toUpperCase()}</span>
+                                ${issue.author}
+                            </div>
+                            <span class="font-medium text-gray-500">#${issue.id}</span>
                         </div>
-                        <span>#${issue.id}</span>
+                        <div class="text-[10px] flex justify-between pt-1 border-t border-gray-50/50">
+                            <span>Opened: ${formatDate(issue.createdAt)}</span>
+                            <span>Updated: ${formatDate(issue.updatedAt)}</span>
+                        </div>
                     </div>
                 </div>
             `;
