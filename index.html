@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>GitHub|Login</title>
+</head>
+<body class="flex justify-center items-center h-screen">
+    <main class="flex items-center justify-center w-full px-4">
+         
+    <form class="flex w-full flex-col max-w-96">
+
+      <img src="github-logo.png" alt="" class="w-[100px] mx-auto mb-6">
+
+        <h2 class="text-4xl font-medium text-gray-900">GitHub Issues Tracker</h2>
+
+        <p class="mt-4 text-base text-gray-500/90">
+           Sign in to manage your issues
+        </p>
+
+        <div class="mt-10">
+            <label class="font-medium">Username</label>
+            <input id="name"
+                placeholder="admin"
+                class="mt-2 rounded-md ring ring-gray-200 focus:ring-2 focus:ring-indigo-600 outline-none px-3 py-3 w-full"
+                required
+                type="text"
+                name="username"
+            />
+        </div>
+
+        <div class="mt-6">
+            <label class="font-medium">Password</label>
+            <input
+            id="pass"
+                placeholder="admin123"
+                class="mt-2 rounded-md ring ring-gray-200 focus:ring-2 focus:ring-indigo-600 outline-none px-3 py-3 w-full"
+                required
+                type="password"
+                name="password"
+            />
+        </div>
+
+        <button id="login-btn"
+            type="submit"
+            class="mt-8 py-3 w-full cursor-pointer rounded-md bg-indigo-600 text-white transition hover:bg-indigo-700"
+        >
+            Login
+        </button>
+        <p class='text-center py-8'>
+            Don't have an account? <a href="/signup" class="text-indigo-600 hover:underline">Sign up</a>
+        </p>
+    </form>
+</main>
+    <script src="script/login.js"></script>
+</body>
+</html>
